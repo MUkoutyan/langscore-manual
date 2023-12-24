@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>応用的な使い方(ツール) &#8212; Langscore 0.8 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script src="_static/documentation_options.js?v=39f8f159"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="応用的な使い方(VX Ace向けのプログラム編)" href="012_2_usage_advance_script_vxace.html" />
+    <link rel="prev" title="各画面の説明" href="011_screen_description.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="012_2_usage_advance_script_vxace.html" title="応用的な使い方(VX Ace向けのプログラム編)"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="011_screen_description.html" title="各画面の説明"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">応用的な使い方(ツール)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="usage-advance">
+<span id="id1"></span><h1>応用的な使い方(ツール)<a class="headerlink" href="#usage-advance" title="Link to this heading">¶</a></h1>
+<p>ざっくりとした内容は <a class="reference internal" href="010_usage.html#basic-usage"><span class="std std-ref">基本的な使い方</span></a> をご覧ください。</p>
+<section id="id2">
+<h2>言語選択<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>言語で使用するフォントを追加する<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>「翻訳ファイル生成モード」が表示されているときに、フォントファイルをドラッグ&amp;ドロップすることで、フォントを追加することが出来ます。</p>
+<p>対応フォントは.ttf, .otfの2種類です。</p>
+<p>フォントを追加した場合、再起動するまで「フォントのプレビュー」にフォントは反映されません。</p>
+<p>追加したフォントはlangscoreプロジェクトフォルダ内のFontsに格納されます。</p>
+<p>CSVファイルの書き出しと同時に、ゲームプロジェクトフォルダ内のFontsフォルダにコピーします。</p>
+<section id="id4">
+<h4>ローカルフォントとグローバルフォント<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<p><strong>ローカルフォント</strong></p>
+<p>ドラッグ&amp;ドロップで追加したフォントはローカルフォントとして扱われます。</p>
+<p>ローカルフォントは1プロジェクトのみで使用することが出来ます。</p>
+<p><strong>グローバルフォント</strong></p>
+<p>しかし、複数のプロジェクトで同じフォントを使用したい場合、一々ドラッグ&amp;ドロップするのは手間があります。</p>
+<p>この手間を省き、常にLangscoreで使用できるようにするのがグローバルフォントです。</p>
+<p>グローバルフォントにするには以下のフォルダにフォントファイルを置きます。</p>
+<p><code class="docutils literal notranslate"><span class="pre">`langscore.exeのあるフォルダ/resources/fonts`</span></code></p>
+</section>
+</section>
+<section id="id5">
+<h3>スクリプト内のテキストで、翻訳するものを絞る<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>スクリプトによっては、ゲーム中で表示される文章が内部に書かれている場合があります。ほとんどの文章は翻訳する必要はありませんが、稀によく翻訳が必要になる箇所があります。</p>
+<img alt="_images/script_trans.png" src="_images/script_trans.png" />
+<p>翻訳が不要な行の場合、ハイライトした列のチェックを外してください。</p>
+<p>スクリプトごと不要にしたい場合は、左側のツリーでチェックを外すと、そのスクリプトのテキストは翻訳CSVから除外されます。</p>
+<img alt="_images/script_trans2.png" src="_images/script_trans2.png" />
+<p>スクリプト内のテキストを翻訳する場合、更にプログラム側の対応が必須になります。詳細は <a class="reference internal" href="012_2_usage_advance_script_vxace.html#usage-advance-script-vxace"><span class="std std-ref">応用的な使い方(VX Ace向けのプログラム編)</span></a> をご覧ください。</p>
+</section>
+<section id="id6">
+<h3>ゲームプロジェクトのアップデートに追従する<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>新規シナリオの追加や誤字脱字の修正等で、ゲームプロジェクトが更新された時の手順を説明します。</p>
+<section id="id7">
+<h4>プロジェクトの再解析<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<p>ゲームプロジェクト側の内容を再度反映させるには、編集モード画面右上の「再解析」ボタンを押します。</p>
+<img alt="_images/update_proj1.png" src="_images/update_proj1.png" />
+<p>再解析を行うと、Langscore上の既存の内容が更新されます。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>上書きした内容は復元できません。</p>
+</div>
+</section>
+<section id="id8">
+<h4>翻訳ファイルの上書き<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h4>
+<img alt="_images/write_dialog2.png" src="_images/write_dialog2.png" />
+<p>既に翻訳ファイルを完成させている場合、上書きしようとすると上記のような画面が表示されます。</p>
+<p>「新しい内容で上書き」以外を選んだ場合の挙動は以下のようになります。</p>
+<ul class="simple">
+<li><p>原文(original行)は全て保持されます。</p>
+<ul>
+<li><p>ゲームから古い文章が消されていても、CSVには引き継がれます。</p></li>
+</ul>
+</li>
+</ul>
+<p>ゲームから削除した文章をCSVからも削除したい場合は、WinMerge等のDiffツールで差分を確認することを推奨します。</p>
+</section>
+</section>
+<section id="id9">
+<h3>画像を変える<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>画像の検索方法は2通りあります。</p>
+<ol class="arabic simple">
+<li><p>Graphics.csvから使用する画像ファイルパスの読み込み。</p></li>
+<li><p>Graphics.csvで画像ファイルパスが見つからない場合[ファイル名_言語名]となるファイルを検索。</p></li>
+</ol>
+<p>上記の処理でも見つからない場合、元の画像を表示します。</p>
+<section id="id10">
+<h4>詳解:1.<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h4>
+<p>以下の画像ファイルを翻訳する場合を例とします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Picture</span><span class="o">/</span><span class="n">TitleLogo</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>翻訳対象が英日中の場合、CSVには以下のように記述します。</p>
+<table class="docutils align-left">
+<thead>
+<tr class="row-odd"><th class="head"><p>original</p></th>
+<th class="head"><p>en</p></th>
+<th class="head"><p>ja</p></th>
+<th class="head"><p>zh-cn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>./Picture/TitleLogo.png</p></td>
+<td><p>Picture/TitleLogo_2.png</p></td>
+<td><p>Picture/TitleLogo.png</p></td>
+<td><p>Picture/TitleLogo_3.png</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id11">
+<h4>詳解:2.<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>MV/MZにおいて、2.の方法は.exeで配布する場合のみ使用可能です。ブラウザでは1.のみの対応のためご注意ください。</p>
+</div>
+<p>翻訳先が空の場合、ファイルパスから検索します。</p>
+<table class="docutils align-left">
+<thead>
+<tr class="row-odd"><th class="head"><p>original</p></th>
+<th class="head"><p>en</p></th>
+<th class="head"><p>ja</p></th>
+<th class="head"><p>zh-cn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>./Picture/TitleLogo.png</p></td>
+<td></td>
+<td><p>./Picture/TitleLogo.png</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>英語表示の場合</p>
+<ul>
+<li><p>./Picture/TitleLogo_en.png</p></li>
+</ul>
+</li>
+<li><p>日本語表示の場合</p>
+<ul>
+<li><p>パスが書かれているので、CSVの内容を適用</p></li>
+</ul>
+</li>
+<li><p>中国語(簡体)表示の場合</p>
+<ul>
+<li><p>./Picture/TitleLogo_zh-cn.png</p></li>
+</ul>
+</li>
+</ul>
+<p>英・中の場合、TitleLogo_(lang).pngが見つからない場合はTitleLogo.pngを表示します。</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">目次</a></h3>
+<p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_usage.html">おおまなか流れ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description.html">各画面の説明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">応用的な使い方(ツール)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_2_usage_advance_script_vxace.html">応用的な使い方(VX Ace向けのプログラム編)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013_note.html">アプリとスクリプトにおける注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
+<li class="toctree-l1"><a class="reference internal" href="055_known_issues.html">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_history.html">変更履歴</a></li>
+</ul>
+
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="011_screen_description.html"
+                          title="前の章へ">各画面の説明</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="012_2_usage_advance_script_vxace.html"
+                          title="次の章へ">応用的な使い方(VX Ace向けのプログラム編)</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="012_2_usage_advance_script_vxace.html" title="応用的な使い方(VX Ace向けのプログラム編)"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="011_screen_description.html" title="各画面の説明"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">応用的な使い方(ツール)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2023, BreezeSinfonia.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

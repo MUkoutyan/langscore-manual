@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="_EHXpMa-TzroeBwN9jpc" name="ページ1">
+        <mxGraphModel dx="1624" dy="1068" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="34" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FC8E0F;opacity=20;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="10" width="810" height="610" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="group;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="90" y="40" width="661.79" height="900" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="1. テキスト抽出" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" parent="24" vertex="1">
+                    <mxGeometry x="319.997279200627" y="170.1470588235294" width="266.0644749216301" height="78.52941176470586" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;font color=&quot;#303030&quot;&gt;&lt;span&gt;ゲーム&lt;/span&gt;&lt;br&gt;&lt;span&gt;プロジェクト&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=20;fillColor=#ffcc99;strokeColor=#36393d;flipH=1;flipV=1;" parent="24" vertex="1">
+                    <mxGeometry x="138.72464007836987" width="342.2989486833856" height="143.97058823529406" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;翻訳者さん" style="shape=actor;whiteSpace=wrap;html=1;fontSize=24;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;" parent="24" vertex="1">
+                    <mxGeometry x="211.85" y="668.64" width="198.15" height="231.36" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="shape=flexArrow;endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="24" source="11" target="7" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="273.3742462852665" y="214.64705882352936" as="sourcePoint"/>
+                        <mxPoint x="147.3437055329154" y="418.8235294117646" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=24;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="24" source="12" target="8" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="196.04750783699058" y="562.7941176470587" as="sourcePoint"/>
+                        <mxPoint x="525.4353277899687" y="340.2941176470588" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="3. 翻訳ファイルを渡す" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" vertex="1" parent="24">
+                    <mxGeometry x="340.00327586206896" y="603.2087179487179" width="297.691398275862" height="65.43782051282051" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Langscore" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=24;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="24" vertex="1">
+                    <mxGeometry x="150.33" y="279.9976470588235" width="319.0909090909091" height="177.79411764705878" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;font color=&quot;#171717&quot;&gt;翻訳前&lt;br&gt;CSV&lt;br&gt;ファイル&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fontSize=20;fillColor=#f5f5f5;gradientColor=#b3b3b3;strokeColor=#666666;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" parent="24" vertex="1">
+                    <mxGeometry x="180.49416942006275" y="395.4411010558069" width="258.75470355799376" height="130.88235294117644" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="2. 翻訳ファイルの作成" style="text;html=1;strokeColor=none;fillColor=default;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;" parent="24" vertex="1">
+                    <mxGeometry x="370.00482758620683" y="417.28230769230765" width="297.691398275862" height="65.43782051282051" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;br&gt;&lt;br&gt;&lt;br&gt;ゲーム制作者&lt;br&gt;さん" style="shape=actor;whiteSpace=wrap;html=1;fontSize=24;fillColor=#FC8E0F;strokeColor=#2D7600;fontColor=#ffffff;" vertex="1" parent="24">
+                    <mxGeometry x="-70" y="130" width="198.15" height="231.36" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
