@@ -39,9 +39,10 @@ Langscore.exeを開いて、ゲームプロジェクトの *フォルダ* をド
 
 .. image:: img/edit_mode9.png
 
+書き出されたこれらのCSVファイルを、翻訳者に渡してください。
+
 .. image:: img/edit_mode6.png
 
-書き出されたこれらのCSVファイルを、翻訳者に渡してください。
 
 
 4. 翻訳したCSVファイルを所定の場所に置く
