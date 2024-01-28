@@ -20,10 +20,10 @@ Langscoreマニュアル
      - 説明
    * - :ref:`Langscoreについて <about>`
      - とりあえず必ず読むページ
+   * - :ref:`チュートリアル <tutorial>`
+     - どんな風に使うのかざっくり知りたい人向け
    * - :ref:`ワークフロー <workflow>`
      - どういう流れで作業するのか知りたい人向け
-   * - :ref:`おおまなか流れ <basic_usage>`
-     - どんな風に使うのかざっくり知りたい人向け
    * - :ref:`各画面の説明 <screen_description>`
      - UI中のボタンが何なのか知りたい人向け
    * - :ref:`応用的な使い方(ツール) <usage_advance>`

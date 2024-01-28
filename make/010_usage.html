@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>チュートリアル &#8212; Langscore 0.8 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <script src="_static/documentation_options.js?v=39f8f159"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="各画面の説明" href="011_screen_description.html" />
+    <link rel="prev" title="ワークフロー" href="002_workflow.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="011_screen_description.html" title="各画面の説明"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="002_workflow.html" title="ワークフロー"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">チュートリアル</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="tutorial">
+<span id="id1"></span><h1>チュートリアル<a class="headerlink" href="#tutorial" title="Link to this heading">¶</a></h1>
+<p>翻訳ファイルを出力するまでの流れを説明します。</p>
+<section id="id2">
+<h2>ゲームプロジェクトを解析する<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<img alt="_images/langscore_exe.gif" src="_images/langscore_exe.gif" />
+<p>Langscore.exeを開いて、ゲームプロジェクトの <em>フォルダ</em> をドラッグアンドドロップします。</p>
+<p>ゲームプロジェクトのフォルダは、rvproj2(VXAce) rpgproject(MV) rmmzproject(MZ) があるフォルダを指します。</p>
+<p>「解析」ボタンを押すことで、ゲーム内で使用されているテキスト等の解析を始めます。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line">Ver.0.8.0ではドラッグ・アンド・ドロップするフォルダのパスに空白文字が含まれていると正しく解析できません。</div>
+<div class="line">ダメな例)C:UsersDocumentsGame Project</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>対応する言語を選ぶ<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<img alt="_images/usage1.png" src="_images/usage1.png" />
+<p>「言語」タブを選び、対応したい言語を選択してください。</p>
+</section>
+<section id="id4">
+<h2>翻訳ファイルを書き出す<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<img alt="_images/edit_mode1.png" src="_images/edit_mode1.png" />
+<p>翻訳対象の閲覧と、翻訳ファイルに含める文章・画像の選択も出来ます。</p>
+<p>「翻訳CSVの書き出し」を押すと指定したフォルダにCSVファイルを書き出します。</p>
+<p>書き出されたCSVファイルを翻訳者に渡してください。</p>
+<p>また書き出しを行うと、Langscoreはゲームプロジェクト内にlangscoreスクリプトとlangscore_customを追加します。</p>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>Langscoreでは翻訳内容の編集は出来ません。(対応予定機能)</p>
+</div>
+</section>
+<section id="id5">
+<h2>翻訳したファイルをゲームに組み込む<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>以下の場所に翻訳ファイルを置いてください。</p>
+<ul class="simple">
+<li><p>VXAce : Data/Translate</p></li>
+<li><p>MV/MZ : data/translate</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>翻訳ファイルは必ずUTF-8で保存してください。(Bomは出来れば無しで)</p>
+</div>
+</section>
+<section id="id6">
+<h2>ゲーム中で言語を切り替える<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="vx-ace">
+<h3>VX Aceの場合<a class="headerlink" href="#vx-ace" title="Link to this heading">¶</a></h3>
+<p>スクリプト中のLangscore.changeLanguage(lang)関数に、言語文字列を指定して呼び出してください。</p>
+<img alt="_images/script_usage_ex.png" src="_images/script_usage_ex.png" />
+<p>また、言語選択メニュークラス&quot;Scene_Language&quot;を用意しています。
+こちらも用途に応じてご利用ください。</p>
+</section>
+<section id="mv-mz">
+<h3>MV/MZの場合<a class="headerlink" href="#mv-mz" title="Link to this heading">¶</a></h3>
+<p>プラグインコマンドに Langscore changeLanguage (言語文字列) を指定してください</p>
+<img alt="_images/script_usage_ex_mvmz.png" src="_images/script_usage_ex_mvmz.png" />
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">目次</a></h3>
+<p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description.html">各画面の説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_1_usage_advance.html">応用的な使い方(ツール)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_2_usage_advance_script_vxace.html">応用的な使い方(VX Ace向けのプログラム編)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013_note.html">アプリとスクリプトにおける注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
+<li class="toctree-l1"><a class="reference internal" href="055_known_issues.html">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_history.html">変更履歴</a></li>
+</ul>
+
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="002_workflow.html"
+                          title="前の章へ">ワークフロー</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="011_screen_description.html"
+                          title="次の章へ">各画面の説明</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="011_screen_description.html" title="各画面の説明"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="002_workflow.html" title="ワークフロー"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">チュートリアル</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2023, BreezeSinfonia.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

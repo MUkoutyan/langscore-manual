@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>応用的な使い方(VX Ace向けのプログラム編) &#8212; Langscore 0.8 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=e02e5f2b" />
+    <script src="_static/documentation_options.js?v=39f8f159"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="プラグイン制作者向けの項目(MV/MZ向け)" href="012_3_for_plugin_creator.html" />
+    <link rel="prev" title="応用的な使い方(ツール)" href="012_1_usage_advance.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="012_3_for_plugin_creator.html" title="プラグイン制作者向けの項目(MV/MZ向け)"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="012_1_usage_advance.html" title="応用的な使い方(ツール)"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">応用的な使い方(VX Ace向けのプログラム編)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="vx-ace">
+<span id="usage-advance-script-vxace"></span><h1>応用的な使い方(VX Ace向けのプログラム編)<a class="headerlink" href="#vx-ace" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>ざっくりとした内容は <a class="reference internal" href="010_usage.html#tutorial"><span class="std std-ref">基本的な使い方</span></a> をご覧ください。</p></li>
+<li><p>共通の内容は <a class="reference internal" href="012_1_usage_advance.html#usage-advance"><span class="std std-ref">応用的な使い方</span></a> をご覧ください。</p></li>
+</ul>
+<p>スクリプト内の文章を翻訳する場合、CSVファイルだけで対応することが出来ません。</p>
+<p>文章ごとに以下の2パターンどちらかの対応が必要になります。</p>
+<ul class="simple">
+<li><p>A.文章を格納している変数の書き換え</p></li>
+<li><p>B.文章を直接書き換え</p></li>
+</ul>
+<section id="a">
+<h2>A.文章を格納している変数の書き換え<a class="headerlink" href="#a" title="Link to this heading">¶</a></h2>
+<p>以下のような、定数に文字列が格納されているパターンについて解説します。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">module</span><span class="w"> </span><span class="nn">Battle_Helper</span>
+<span class="w">    </span><span class="c1">#ここの&quot;攻撃&quot;を翻訳したい</span>
+<span class="w">    </span><span class="no">BATTLE_ATTACK_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;攻撃&quot;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>バトル中に表示される&quot;攻撃&quot;をBATTLE_ATTACK_TEXT変数に代入している処理です。</p>
+<p>&quot;攻撃&quot;を&quot;Hit&quot;にしたい場合、BATTLE_ATTACK_TEXTを書き換える処理が必要ですが、</p>
+<p>Langscoreではその処理をlangscore_customに記述します。</p>
+<ul class="simple">
+<li><p>まず、langscore_customの冒頭に <code class="docutils literal notranslate"><span class="pre">`Langscore.translate_(識別ID)</span> <span class="pre">#(スクリプト名)`</span></code> という行があるので、そこから翻訳したいスクリプトを探してください。</p></li>
+<li><p>次に、該当のスクリプトから関数 <code class="docutils literal notranslate"><span class="pre">`def</span> <span class="pre">Langscore.translate_(識別ID)`</span></code> と記述されている箇所を探します。</p></li>
+</ul>
+<p>翻訳対象に&quot;攻撃&quot;が正しく含まれている場合、関数内に以下の様な記述がされています。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="c1">#Scripts/01234567#37,38</span>
+<span class="c1">#original : 攻撃</span>
+<span class="c1">#Langscore.translate_for_script(&quot;01234567:37:38&quot;)</span>
+</pre></div>
+</div>
+<p>1行目から、</p>
+<ol class="arabic simple">
+<li><p>スクリプト識別子と行,列の情報</p></li>
+<li><p>スクリプトに書かれている原文</p></li>
+<li><p>翻訳文を返す関数</p></li>
+</ol>
+<p>になります。</p>
+<ul class="simple">
+<li><p>ここに処理を記述します。例が以下の通りです。</p></li>
+</ul>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="c1">#Scripts/01234567#37,38</span>
+<span class="c1">#original : 攻撃</span>
+<span class="no">BATTLE_ATTACK_TEXT</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="no">Langscore</span><span class="o">.</span><span class="n">translate_for_script</span><span class="p">(</span><span class="s2">&quot;01234567:37:38&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>translate_for_script関数は、入力した文字列と現在選択されている言語を元に、翻訳文を返します。</p>
+<p>返された結果を.replace関数を使うことで上書きします。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>BATTLE_ATTACK_TEXTの様な全て大文字の変数は定数と呼ばれ、本来は書き換えることを想定していません。
+Langscoreでは仕方なく.replaceを使用して書き換えていますが、本来はお行儀の悪い関数であることを認識して頂ければと思います。</p>
+</div>
+</section>
+<section id="b">
+<h2>B.直接書き換え<a class="headerlink" href="#b" title="Link to this heading">¶</a></h2>
+<p>関数内のローカル変数に翻訳したい文字列が格納されている場合などは、こちらの手法を使います。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_attack_text</span>
+<span class="w">        </span><span class="n">draw_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;%1の攻撃！&quot;</span>
+<span class="w">        </span><span class="n">draw_function</span><span class="p">(</span><span class="n">draw_text</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>上記のケースの場合、langscore_customからdraw_text変数が見れないため、書き換えることが出来ません。</p>
+<p>この場合、lstrans関数を使用する方法で翻訳を適用します。</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_attack_text</span>
+<span class="w">        </span><span class="n">draw_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;%1の攻撃！&quot;</span><span class="o">.</span><span class="n">lstrans</span><span class="p">(</span><span class="s2">&quot;Script:123:45&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="c1">#                   ^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+<span class="w">        </span><span class="n">draw_function</span><span class="p">(</span><span class="n">draw_text</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>.lstransは文字列のみに使用できるLangscoreの翻訳関数になります。</p>
+<p>引数に渡す識別子はlangscore_customに記載されていますので、コピペしてお使いください。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>.lstrans関数に渡す文字列は翻訳対象となりません。</p>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">目次</a></h3>
+<p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_usage.html">おおまなか流れ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description.html">各画面の説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_1_usage_advance.html">応用的な使い方(ツール)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">応用的な使い方(VX Ace向けのプログラム編)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013_note.html">アプリとスクリプトにおける注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
+<li class="toctree-l1"><a class="reference internal" href="055_known_issues.html">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_history.html">変更履歴</a></li>
+</ul>
+
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="012_1_usage_advance.html"
+                          title="前の章へ">応用的な使い方(ツール)</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="012_3_for_plugin_creator.html"
+                          title="次の章へ">プラグイン制作者向けの項目(MV/MZ向け)</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="012_3_for_plugin_creator.html" title="プラグイン制作者向けの項目(MV/MZ向け)"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="012_1_usage_advance.html" title="応用的な使い方(ツール)"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">応用的な使い方(VX Ace向けのプログラム編)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2023, BreezeSinfonia.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
