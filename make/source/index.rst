@@ -52,7 +52,7 @@ Langscoreマニュアル
    
   ./001_about.rst
   ./002_workflow.rst
-  ./010_usage.rst
+  ./003_usage.rst
   ./011_screen_description.rst
   ./012_1_usage_advance.rst
   ./012_2_usage_advance_script_vxace.rst
