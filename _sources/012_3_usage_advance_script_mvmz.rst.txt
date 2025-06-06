@@ -1,0 +1,9 @@
+.. _usage_advance_script_vxace:
+
+プラグイン内の文章を翻訳する(MV/MZ向けのプログラム編)
+########################################
+
+LangscoreはPluginManagerに対して翻訳処理の拡張を行います。
+言語を切り替えた場合、PluginManagerに含まれている文章を置き換えます。
+
+そのため、PluginManagerを使用している場合は

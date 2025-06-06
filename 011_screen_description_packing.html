@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="ja" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>各画面の説明(パッキングモード) &#8212; Langscore 0.8.6 ドキュメント</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
+    <script src="_static/documentation_options.js?v=be85f94e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=4dbe4bdc"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="応用的な使い方(ツール)" href="012_1_usage_advance.html" />
+    <link rel="prev" title="各画面の説明(翻訳ファイル作成モード)" href="011_screen_description_edit.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="012_1_usage_advance.html" title="応用的な使い方(ツール)"
+             accesskey="N">次へ</a> |</li>
+        <li class="right" >
+          <a href="011_screen_description_edit.html" title="各画面の説明(翻訳ファイル作成モード)"
+             accesskey="P">前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.6 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">各画面の説明(パッキングモード)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="screen-description-packing">
+<span id="id1"></span><h1>各画面の説明(パッキングモード)<a class="headerlink" href="#screen-description-packing" title="Link to this heading">¶</a></h1>
+<section id="id2">
+<h2>パッキングモード<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<img alt="_images/packing_mode.png" src="_images/packing_mode.png" />
+<ol class="arabic simple">
+<li><p>問題の確認を行う際にCSVファイルを検索するパスです。</p></li>
+<li><p>問題を確認した際にヒットしたファイルです。問題がある場合は警告またはエラーのアイコンが表示されます。(エラー優先)</p></li>
+<li><p>翻訳文の内容を表示します。警告のある箇所は背景を黄色く、エラーのある箇所は赤く表示します。</p></li>
+<li><p>翻訳ファイルに問題があるかを確認します。1.で指定したフォルダ以下のCSVを検索します。</p></li>
+<li><p>(VX Aceのみ)CSVファイルをrvdata2にパッキングします。</p></li>
+<li><p>タブによって3を切り替えます。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>VX Aceの「暗号化アーカイブを作成する」を使用してゲームを配布する場合、パッキングは必ず行ってください。</p>
+</div>
+<section id="csv">
+<h3>CSVファイルを検索するパス<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h3>
+<p>CSVファイルを検索するパスは <strong>翻訳ファイル書き出しモードで最後にファイルを書き出したフォルダ</strong> になります。</p>
+<p>翻訳ファイルを別フォルダに移して作業した場合は、適宜指定し直してください。</p>
+</section>
+<section id="id3">
+<h3>問題の確認について<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>翻訳文に致命的なミスが無いかをチェックします。以下の内容を警告またはエラーとして検出します。</p>
+<ul class="simple">
+<li><p>翻訳ファイル作成モードで指定した言語と、CSV内の言語列に差異がある</p></li>
+<li><p>言語ごとの翻訳文に空の箇所があるか</p></li>
+<li><p>翻訳文に原文の制御文字が正しく含まれているか</p></li>
+<li><p>[]で閉じる必要がある制御文字が正しく閉じられているか</p></li>
+<li><p>マップ系の改行文字が\r\nである</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>警告やエラーはあくまでヒントになります。無視してもパッキングに影響はありませんが、ゲーム側で意図しない表示になる可能性があります。</p>
+</div>
+</section>
+<section id="vx-ace">
+<h3>パッキングの書き出し先について (VX Aceのみ)<a class="headerlink" href="#vx-ace" title="Link to this heading">¶</a></h3>
+<p>パッキングしたファイルは常にゲームプロジェクトの Data/Translate に書き出されます。</p>
+<p>この出力先は変更できません。</p>
+</section>
+</section>
+</section>
+<section id="id4">
+<h1>見切れ検出<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h1>
+<p>テキストの表示がウィンドウ内に収まっているかを判定する機能です。</p>
+<p>プロジェクトを開いた後、パッキングモードを選択して下さい。
+パッキングモードのタブに「テキストの見切れ検出」があります。</p>
+<img alt="_images/text_clip_detect1.png" src="_images/text_clip_detect1.png" />
+<p>見切れ検出には2種類の方法があります。どちらも検出する長さを指定します。</p>
+<p>(検出長 &lt; 文章長) で警告となります。</p>
+<section id="id5">
+<h2>文章数<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>文字数を指定し、その文字数を超えた場合に警告を出します。</p>
+<img alt="_images/text_clip_detect2.png" src="_images/text_clip_detect2.png" />
+<p>画像の文章の場合、10を指定すると警告が出ます。</p>
+</section>
+<section id="id6">
+<h2>文章の表示長<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<p>文章の横幅における最大ピクセル数を指定し、その長さを超えた場合に警告を出します。
+フォントは各種言語で指定したフォントに準拠します。</p>
+<img alt="_images/text_clip_detect3.png" src="_images/text_clip_detect3.png" />
+<p>画像の文章の場合、179を指定すると警告が出ます。</p>
+</section>
+<section id="id7">
+<h2>検出対象<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<p>検出する文章のカテゴリが7種類あります。</p>
+<section id="id8">
+<h3>バトルメッセージ<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>戦闘中に表示されるメッセージ（〇〇の攻撃！）です。</p>
+</section>
+<section id="battlename">
+<h3>battleName<a class="headerlink" href="#battlename" title="Link to this heading">¶</a></h3>
+<p>戦闘中に表示されるキャラ名などです。英語になっているのは多分ミスです。</p>
+</section>
+<section id="id9">
+<h3>説明文<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>アイテムや武器防具の説明文です。</p>
+</section>
+<section id="id10">
+<h3>文章<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>会話テキストが該当します。</p>
+</section>
+<section id="id11">
+<h3>アイコン付き文章<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>アイコンが付いている場合の文章です。検出する長さには、文章が表示される右端から左端までの長さを計測して設定して下さい。</p>
+</section>
+<section id="id12">
+<h3>名前<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>メニューなどに表示されるキャラ名です。</p>
+</section>
+<section id="id13">
+<h3>その他<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p>分類出来なかった内容がその他として格納されます。</p>
+<section id="id14">
+<h4>設定方法<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h4>
+<p>「ファイル単位で指定」または「一括で指定」で指定可能です。</p>
+</section>
+</section>
+</section>
+<section id="id15">
+<h2>ファイル単位で指定<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<p>翻訳CSV毎に設定を行います。
+ファイルは「翻訳ファイルが有るフォルダ」で指定したフォルダ内のファイルが表示されます。</p>
+<img alt="_images/text_clip_detect4.png" src="_images/text_clip_detect4.png" />
+<section id="id16">
+<h3>一括で指定<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<p>検出対象毎に検出設定を適用します。同じ検出対象を持つ全てのファイルに影響します。</p>
+<img alt="_images/text_clip_detect6.png" src="_images/text_clip_detect6.png" />
+<section id="id17">
+<h4>その他の設定<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h4>
+<p>ツクールの制御文字を使用している文章の場合、制御文字を考慮して長さの検出を行います。
+しかし、プラグインによっては独自の制御文字を使用しているものもあるため、それらのプラグインを使用している場合ここの設定を変更します。</p>
+<p>枠で括った辺りをクリックすると、制御文字入力UIが表示されます。</p>
+<img alt="_images/text_clip_detect7.png" src="_images/text_clip_detect7.png" />
+<p>↓</p>
+<img alt="_images/text_clip_detect8.png" src="_images/text_clip_detect8.png" />
+<p>&quot;Enter a tag and press Enter&quot;に制御文字を入力して、+ボタンを押して下さい。
+&quot;&quot; は不要です。また、&quot;[]&quot;が含まれる場合は&quot;〇〇[&quot;と入力して下さい。
+例えばset[]という制御文字の場合は&quot;set[&quot;と入力します。</p>
+<img alt="_images/text_clip_detect9.png" src="_images/text_clip_detect9.png" />
+<p>削除する場合はxボタンを押して下さい。テキストの編集も可能です。</p>
+</section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">目次</a></h3>
+<p class="caption" role="heading"><span class="caption-text">目次</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003_usage.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_edit.html">各画面の説明(翻訳ファイル作成モード)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">各画面の説明(パッキングモード)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">見切れ検出</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_1_usage_advance.html">応用的な使い方(ツール)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_2_usage_advance_script_vxace.html">応用的な使い方(VX Ace向けのプログラム編)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013_note.html">アプリとスクリプトにおける注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
+<li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
+<li class="toctree-l1"><a class="reference internal" href="055_known_issues.html">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_history.html">変更履歴</a></li>
+</ul>
+
+  <div>
+    <h4>前のトピックへ</h4>
+    <p class="topless"><a href="011_screen_description_edit.html"
+                          title="前の章へ">各画面の説明(翻訳ファイル作成モード)</a></p>
+  </div>
+  <div>
+    <h4>次のトピックへ</h4>
+    <p class="topless"><a href="012_1_usage_advance.html"
+                          title="次の章へ">応用的な使い方(ツール)</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">クイック検索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="検索" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>ナビゲーション</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="012_1_usage_advance.html" title="応用的な使い方(ツール)"
+             >次へ</a> |</li>
+        <li class="right" >
+          <a href="011_screen_description_edit.html" title="各画面の説明(翻訳ファイル作成モード)"
+             >前へ</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.6 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">各画面の説明(パッキングモード)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 著作権 2024, BreezeSinfonia.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
