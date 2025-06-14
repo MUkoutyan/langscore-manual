@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Langscore'
-copyright = '2023, BreezeSinfonia'
+copyright = '2025, BreezeSinfonia'
 author = 'BreezeSinfonia'
-release = '0.8.1'
+release = '0.8.8'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -25,6 +25,8 @@ language = 'ja'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'nature'
+html_theme_options = {
+}
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 

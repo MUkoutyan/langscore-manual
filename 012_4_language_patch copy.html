@@ -5,18 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>既知の問題 &#8212; Langscore 0.8 ドキュメント</title>
+    <title>言語パッチ機能 &#8212; Langscore 0.8.6 ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <script src="_static/documentation_options.js?v=39f8f159"></script>
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
+    <script src="_static/documentation_options.js?v=be85f94e"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=4dbe4bdc"></script>
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="変更履歴" href="060_history.html" />
-    <link rel="prev" title="バグ報告・質問" href="030_information.html" /> 
+    <link rel="search" title="検索" href="search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>ナビゲーション</h3>
@@ -24,14 +22,8 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
-        <li class="right" >
-          <a href="060_history.html" title="変更履歴"
-             accesskey="N">次へ</a> |</li>
-        <li class="right" >
-          <a href="030_information.html" title="バグ報告・質問"
-             accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">既知の問題</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.6 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">言語パッチ機能</a></li> 
       </ul>
     </div>  
 
@@ -40,19 +32,42 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="known-issues">
-<span id="id1"></span><h1>既知の問題<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h1>
+  <section id="language-patch">
+<span id="id1"></span><h1>言語パッチ機能<a class="headerlink" href="#language-patch" title="Link to this heading">¶</a></h1>
+<p>言語パッチモードは、翻訳データの管理方式を従来の翻訳CSVファイルから、「言語ごとの個別CSVファイル」に変更できる機能です。</p>
+<p>言語パッチモードの最大の特徴は、<strong>あらかじめ許可されている言語であれば、任意の言語を個別に追加可能である</strong> という点です。</p>
+<p>これにより、特定の言語だけの翻訳CSVを配布することが可能となります。</p>
+<section id="id2">
+<h2>有効にする<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>言語パッチモードを有効にするには、プラグインの更新または翻訳データを書き出す際に、以下のオプションにチェックを入れてください。</p>
+<img alt="_images/lang_patch_1.png" src="_images/lang_patch_1.png" />
+</section>
 <section id="csv">
-<h2>CSV書き出しの度にスクリプトが上書きされる<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h2>
-<p>解析時点の内容でスクリプトを保持しており、書き出し時にはその内容を使用してスクリプトデータを作成しています。</p>
-<p>そのため解析以降にスクリプトを更新した場合は、古い内容で新しいスクリプトを上書きしてしまいます。</p>
-<p>更新したい場合は、以下の手順で```スクリプトに翻訳する原文を追加していない場合に限り```対応可能です。</p>
+<h2>CSVの配置場所<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>(プロジェクト名)_langscore内のconfig.jsonを別フォルダに退避</p></li>
-<li><p>(プロジェクト名)_langscore内のanalyzeフォルダを削除</p></li>
-<li><p>Langscore.exeで再度プロジェクトを解析</p></li>
-<li><p>Langscore.exeを終了し、退避したconfig.jsonを元の場所に戻す(作成されたものを上書き)</p></li>
+<li><p>従来のCSVの配置場所:</p></li>
 </ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data/Translate</span></code> 以下に全ての翻訳CSVを配置。</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>言語パッチモード有効時のCSV配置場所:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data/Translate/(言語コード)</span></code> フォルダに各言語のCSVを配置。</p></li>
+<li><p>MV/MZバージョンの場合は <code class="docutils literal notranslate"><span class="pre">data/translate/(言語コード)</span></code> フォルダに配置。</p></li>
+</ul>
+</div></blockquote>
+<p>この <code class="docutils literal notranslate"><span class="pre">(言語コード)</span></code> フォルダを「言語フォルダ」と呼称します。</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<ul class="simple">
+<li><p>言語パッチモードはMV/MZのWebブラウザ実行時では使用できません。従来の方法を使用して下さい。</p></li>
+</ul>
+</div>
 </section>
 </section>
 
@@ -65,11 +80,13 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">目次</a></h3>
 <p class="caption" role="heading"><span class="caption-text">目次</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
 <li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010_usage.html">チュートリアル</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011_screen_description.html">各画面の説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003_usage.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_edit.html">各画面の説明(翻訳ファイル作成モード)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_packing.html">各画面の説明(パッキングモード)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_packing.html#id4">見切れ検出</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_1_usage_advance.html">応用的な使い方(ツール)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_2_usage_advance_script_vxace.html">応用的な使い方(VX Ace向けのプログラム編)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
@@ -77,20 +94,10 @@
 <li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">既知の問題</a></li>
+<li class="toctree-l1"><a class="reference internal" href="055_known_issues.html">既知の問題</a></li>
 <li class="toctree-l1"><a class="reference internal" href="060_history.html">変更履歴</a></li>
 </ul>
 
-  <div>
-    <h4>前のトピックへ</h4>
-    <p class="topless"><a href="030_information.html"
-                          title="前の章へ">バグ報告・質問</a></p>
-  </div>
-  <div>
-    <h4>次のトピックへ</h4>
-    <p class="topless"><a href="060_history.html"
-                          title="次の章へ">変更履歴</a></p>
-  </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">クイック検索</h3>
     <div class="searchformwrapper">
@@ -111,18 +118,12 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="総合索引"
              >索引</a></li>
-        <li class="right" >
-          <a href="060_history.html" title="変更履歴"
-             >次へ</a> |</li>
-        <li class="right" >
-          <a href="030_information.html" title="バグ報告・質問"
-             >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">既知の問題</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.6 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">言語パッチ機能</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; 著作権 2023, BreezeSinfonia.
+    &#169; 著作権 2024, BreezeSinfonia.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>

@@ -43,8 +43,9 @@ LangscoreはRPGツクール VXAce, RPGツクール MV/MZで翻訳機能を実装
 必須コンポーネント
 ~~~~~~~~~~~~~~~~~~~~
 
-* Microsoft Visual C++ 2019 再頒布可能パッケージ
-  - 未インストールの場合はexeと同じフォルダに有るvc_redist.x64.exeをご利用ください。
+* Microsoft Visual C++ 2022 再頒布可能パッケージ
+
+ - 未インストールの場合はexeと同じフォルダに有るvc_redist.x64.exeをご利用ください。
 
 
 作った人

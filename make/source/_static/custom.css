@@ -3,3 +3,115 @@
 .strike {
     text-decoration: line-through;
 }
+
+
+/* フォント設定 */
+body, div.body {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* コードフォント */
+code, pre, .sig, tt, kbd, samp {
+    font-family: "Consolas", "Monaco", "Courier New", monospace !important;
+}
+
+/* サイドバーフォント */
+div.sphinxsidebar {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+}
+
+/* テーブルフォント */
+table.docutils {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+}
+
+/* ...existing code... */
+
+/* 見出しレベル別スタイル設定 */
+
+/* H1 - 最上位見出し */
+h1 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* H2 - セクション見出し */
+h2 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #34495e;
+    border-left: 4px solid #3498db;
+    padding-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* H3 - サブセクション見出し */
+h3 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 1px solid #bdc3c7;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* H4 - 小見出し */
+h4 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #34495e;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+/* H5 - より小さい見出し */
+h5 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #7f8c8d;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+/* H6 - 最小見出し */
+h6 {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif !important;
+    text-shadow: none !important;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #95a5a6;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+/* 見出し間の余白調整 */
+h1 + h2 {
+    margin-top: 15px;
+}
+
+h2 + h3 {
+    margin-top: 12px;
+}
+
+h3 + h4 {
+    margin-top: 10px;
+}

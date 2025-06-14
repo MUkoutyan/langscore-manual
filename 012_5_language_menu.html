@@ -5,18 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>アプリとスクリプトにおける注意点 &#8212; Langscore 0.8 ドキュメント</title>
+    <title>言語選択メニュー &#8212; Langscore 0.8.8 ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <script src="_static/documentation_options.js?v=39f8f159"></script>
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
+    <script src="_static/documentation_options.js?v=f2e7de95"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=4dbe4bdc"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
-    <link rel="next" title="Tips" href="014_tips.html" />
-    <link rel="prev" title="プラグイン制作者向けの項目(MV/MZ向け)" href="012_3_for_plugin_creator.html" /> 
+    <link rel="next" title="アプリとスクリプトにおける注意点" href="013_note.html" />
+    <link rel="prev" title="言語パッチ機能" href="012_4_language_patch.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>ナビゲーション</h3>
@@ -25,13 +25,13 @@
           <a href="genindex.html" title="総合索引"
              accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="014_tips.html" title="Tips"
+          <a href="013_note.html" title="アプリとスクリプトにおける注意点"
              accesskey="N">次へ</a> |</li>
         <li class="right" >
-          <a href="012_3_for_plugin_creator.html" title="プラグイン制作者向けの項目(MV/MZ向け)"
+          <a href="012_4_language_patch.html" title="言語パッチ機能"
              accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">アプリとスクリプトにおける注意点</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">言語選択メニュー</a></li> 
       </ul>
     </div>  
 
@@ -40,48 +40,27 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="points-to-note">
-<span id="id1"></span><h1>アプリとスクリプトにおける注意点<a class="headerlink" href="#points-to-note" title="Link to this heading">¶</a></h1>
-<section id="id2">
-<h2>競合する可能性のあるスクリプト<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
-<p>Langscoreでは下記の処理または、関数の処理を上書きしています。</p>
-<p>他のスクリプトが同様の事を行っていた場合、Langscoreの処理と競合する可能性があります。</p>
-<section id="vx-ace">
-<h3>VX Ace<a class="headerlink" href="#vx-ace" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>Game_Map.setup</p></li>
-<li><p>Window_Base.convert_escape_characters</p></li>
-<li><p>Window_Base.draw_text</p></li>
-<li><p>DataManager.load_normal_database (eval)</p></li>
-<li><p>DataManager.make_save_contents (eval)</p></li>
-<li><p>Cache.load_bitmap (eval)</p></li>
-<li><p>フォントの変更</p></li>
-</ul>
+  <section id="language-menu">
+<span id="id1"></span><h1>言語選択メニュー<a class="headerlink" href="#language-menu" title="Link to this heading">¶</a></h1>
+<p><a class="reference internal" href="012_4_language_patch.html#language-patch"><span class="std std-ref">言語パッチ機能について</span></a> の対応に合わせて、プラグイン内で簡易的な言語選択メニューを用意しました。</p>
+<p>パッチモードを使用している場合、言語フォルダが見つかったもののみ表示されます。</p>
+<section id="vxace">
+<h2>VXAce<a class="headerlink" href="#vxace" title="Link to this heading">¶</a></h2>
+<img alt="_images/lang_menu_1.png" src="_images/lang_menu_1.png" />
+<p>スクリプトの呼び出しで <code class="docutils literal notranslate"><span class="pre">Langscore.display_language_menu</span></code> を呼び出します。</p>
+<img alt="_images/lang_menu_2.png" src="_images/lang_menu_2.png" />
 </section>
-<section id="mv-mz">
-<h3>MV/MZ<a class="headerlink" href="#mv-mz" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>Window_Base.convertEscapeCharacters</p></li>
-<li><p>Window_Base.standardFontFace</p></li>
-<li><p>Window_Base.standardFontSize</p></li>
-<li><p>DataManager.loadDatabase</p></li>
-<li><p>DataManager.loadMapData</p></li>
-<li><p>DataManager.isDatabaseLoaded</p></li>
-<li><p>DataManager.makeSaveContents</p></li>
-<li><p>DataManager.extractSaveContents</p></li>
-<li><p>Game_System.prototype.isJapanese</p></li>
-<li><p>Game_System.prototype.isChinese</p></li>
-<li><p>Game_System.prototype.isKorean</p></li>
-<li><p>Game_System.prototype.isCJK</p></li>
-<li><p>Game_System.prototype.isRussian</p></li>
-<li><p>ImageManager.loadBitmap</p></li>
-<li><p>フォントの変更</p></li>
-</ul>
+<section id="mv">
+<h2>MV<a class="headerlink" href="#mv" title="Link to this heading">¶</a></h2>
+<img alt="_images/lang_menu_3.png" src="_images/lang_menu_3.png" />
+<p>プラグインコマンドで <code class="docutils literal notranslate"><span class="pre">langscore</span> <span class="pre">displayLanguageMenu</span></code> を呼び出します。</p>
+<img alt="_images/lang_menu_4.png" src="_images/lang_menu_4.png" />
 </section>
-<section id="md5">
-<h3>各ソフトのMD5値<a class="headerlink" href="#md5" title="Link to this heading">¶</a></h3>
-<p>Powershellやハッシュ値比較ソフトでMD5の比較を行う際に利用してください。</p>
-</section>
+<section id="mz">
+<h2>MZ<a class="headerlink" href="#mz" title="Link to this heading">¶</a></h2>
+<img alt="_images/lang_menu_5.png" src="_images/lang_menu_5.png" />
+<p>プラグインコマンドから Langscore | 言語変更メニュー を呼び出します。</p>
+<img alt="_images/lang_menu_6.png" src="_images/lang_menu_6.png" />
 </section>
 </section>
 
@@ -97,12 +76,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001_about.html">Langscoreについて</a></li>
 <li class="toctree-l1"><a class="reference internal" href="002_workflow.html">ワークフロー</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010_usage.html">チュートリアル</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011_screen_description.html">各画面の説明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003_usage.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_edit.html">各画面の説明(翻訳ファイル作成モード)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_packing.html">各画面の説明(パッキングモード)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011_screen_description_packing.html#id4">見切れ検出</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_1_usage_advance.html">応用的な使い方(ツール)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_2_usage_advance_script_vxace.html">応用的な使い方(VX Ace向けのプログラム編)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="012_3_for_plugin_creator.html">プラグイン制作者向けの項目(MV/MZ向け)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">アプリとスクリプトにおける注意点</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012_4_language_patch.html">言語パッチ機能</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">言語選択メニュー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013_note.html">アプリとスクリプトにおける注意点</a></li>
 <li class="toctree-l1"><a class="reference internal" href="014_tips.html">Tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="020_uninstall.html">アンインストール</a></li>
 <li class="toctree-l1"><a class="reference internal" href="030_information.html">バグ報告・質問</a></li>
@@ -112,13 +95,13 @@
 
   <div>
     <h4>前のトピックへ</h4>
-    <p class="topless"><a href="012_3_for_plugin_creator.html"
-                          title="前の章へ">プラグイン制作者向けの項目(MV/MZ向け)</a></p>
+    <p class="topless"><a href="012_4_language_patch.html"
+                          title="前の章へ">言語パッチ機能</a></p>
   </div>
   <div>
     <h4>次のトピックへ</h4>
-    <p class="topless"><a href="014_tips.html"
-                          title="次の章へ">Tips</a></p>
+    <p class="topless"><a href="013_note.html"
+                          title="次の章へ">アプリとスクリプトにおける注意点</a></p>
   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">クイック検索</h3>
@@ -141,17 +124,17 @@
           <a href="genindex.html" title="総合索引"
              >索引</a></li>
         <li class="right" >
-          <a href="014_tips.html" title="Tips"
+          <a href="013_note.html" title="アプリとスクリプトにおける注意点"
              >次へ</a> |</li>
         <li class="right" >
-          <a href="012_3_for_plugin_creator.html" title="プラグイン制作者向けの項目(MV/MZ向け)"
+          <a href="012_4_language_patch.html" title="言語パッチ機能"
              >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8 ドキュメント</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">アプリとスクリプトにおける注意点</a></li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">言語選択メニュー</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; 著作権 2023, BreezeSinfonia.
+    &#169; 著作権 2025, BreezeSinfonia.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>

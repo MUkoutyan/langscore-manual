@@ -24,14 +24,20 @@ Langscoreマニュアル
      - どんな風に使うのかざっくり知りたい人向け
    * - :ref:`ワークフロー <workflow>`
      - どういう流れで作業するのか知りたい人向け
-   * - :ref:`各画面の説明 <screen_description>`
+   * - :ref:`各画面の説明(翻訳ファイル作成モード) <screen_description_edit>`
      - UI中のボタンが何なのか知りたい人向け
+   * - :ref:`各画面の説明(パッキングモード) <screen_description_packing>`
+     - パッキングモードとはなんぞやを説明
    * - :ref:`応用的な使い方(ツール) <usage_advance>`
      - Langscoreアプリの応用的な使い方
    * - :ref:`応用的な使い方(VX Ace向けのプログラム編) <usage_advance_script_vxace>`
      - VX Aceにおけるスクリプトの書き方
    * - :ref:`プラグイン制作者向けの項目(MV/MZ向け) <for_plugin_creator>`
      - プラグインでLangscoreを対応したい人向け
+   * - :ref:`言語パッチ機能について <language_patch>`
+     - 翻訳ファイルをパッチで扱いたい人向け
+   * - :ref:`言語選択メニューについて <language_menu>`
+     - 簡易でも良いから言語選択メニューを表示したい人向け
    * - :ref:`アプリとスクリプトの注意点 <points_to_note>`
      - 注意する点
    * - :ref:`Tips <tips>`
@@ -53,10 +59,13 @@ Langscoreマニュアル
   ./001_about.rst
   ./002_workflow.rst
   ./003_usage.rst
-  ./011_screen_description.rst
+  ./011_screen_description_edit.rst
+  ./011_screen_description_packing.rst
   ./012_1_usage_advance.rst
   ./012_2_usage_advance_script_vxace.rst
   ./012_3_for_plugin_creator.rst
+  ./012_4_language_patch.rst
+  ./012_5_language_menu.rst
   ./013_note.rst
   ./014_tips.rst
   ./020_uninstall.rst
