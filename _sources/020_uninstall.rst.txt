@@ -23,6 +23,7 @@ RPGツクールMV/MZの場合
 以下のスクリプトを削除してください
 
 * Langscore
+* Langscore_ObserverBridge
 * LangscoreCustom
 
 

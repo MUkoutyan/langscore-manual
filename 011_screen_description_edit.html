@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>各画面の説明(翻訳ファイル作成モード) &#8212; Langscore 0.8.8 ドキュメント</title>
+    <title>各画面の説明(翻訳ファイル作成モード) &#8212; Langscore 0.8.11 ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
-    <script src="_static/documentation_options.js?v=f2e7de95"></script>
+    <script src="_static/documentation_options.js?v=036f3d4d"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=4dbe4bdc"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="003_usage.html" title="チュートリアル"
              accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">各画面の説明(翻訳ファイル作成モード)</a></li> 
       </ul>
     </div>  
@@ -77,6 +77,13 @@
 </li>
 </ol>
 <img alt="_images/edit_mode10.png" src="_images/edit_mode10.png" />
+<ol class="arabic simple" start="4">
+<li><p>再解析ボタン</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#reanalysis"><span class="std std-ref">再解析</span></a> を行います。</p></li>
+</ul>
+</li>
+</ol>
 </section>
 <section id="id4">
 <h2>情報ウィンドウの種類<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
@@ -187,10 +194,21 @@
 <p>不具合等があった場合、このログを頂けると大変助かります。</p>
 </section>
 </section>
-<section id="id11">
-<h2>書き出しダイアログ<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<section id="reanalysis">
+<span id="id11"></span><h2>再解析<a class="headerlink" href="#reanalysis" title="Link to this heading">¶</a></h2>
+<p>現在のゲームプロジェクトの再解析を行います。</p>
+<p>ゲーム内の文章を修正したり、新規に文章を追加した場合は必ず再解析を行って下さい。</p>
+<p>再解析後に書き出しを行うことで、最新の内容が翻訳CSVに反映されます。</p>
+<div class="warning admonition">
+<p class="admonition-title">注意</p>
+<p>テキストの修正や削除を行っても、CSVには修正前や削除したテキストが残り続けます。</p>
+<p>翻訳処理には問題ありませんが、不要な場合は手動で削除して下さい。</p>
+</div>
+</section>
 <section id="id12">
-<h3>初回書き出し時<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<h2>書き出しダイアログ<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<section id="id13">
+<h3>初回書き出し時<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
 <img alt="_images/write_dialog1.png" src="_images/write_dialog1.png" />
 <ul class="simple">
 <li><p>言語パッチモードを有効にする</p></li>
@@ -209,8 +227,8 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id13">
-<h3>プラグインの更新 (2回目以降)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<section id="id14">
+<h3>プラグインの更新 (2回目以降)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
 <img alt="_images/write_dialog3.png" src="_images/write_dialog3.png" />
 <ul class="simple">
 <li><p>言語パッチモードを使用する</p></li>
@@ -221,11 +239,10 @@
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li><p>Translation process in default language</p></li>
+<li><p>デフォルト言語の際に翻訳処理を行う</p></li>
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li><p>「デフォルト言語使用時に言語処理を行う」かのチェックです。</p></li>
 <li><p>チェックを外すと、デフォルト言語使用時は翻訳処理を <code class="docutils literal notranslate"><span class="pre">行いません</span></code> 。</p></li>
 </ul>
 </div></blockquote>
@@ -247,7 +264,7 @@
 </div></blockquote>
 </section>
 <section id="csv-2">
-<h3>翻訳CSVの更新 (2回目以降)<a class="headerlink" href="#csv-2" title="Link to this heading">¶</a></h3>
+<span id="update-csv-second"></span><h3>翻訳CSVの更新 (2回目以降)<a class="headerlink" href="#csv-2" title="Link to this heading">¶</a></h3>
 <img alt="_images/write_dialog4.png" src="_images/write_dialog4.png" />
 <ul class="simple">
 <li><p>言語パッチモードを使用する</p></li>
@@ -267,18 +284,18 @@
 </ul>
 </div></blockquote>
 </section>
-<section id="id14">
-<h3>上書き確認について<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
-<p>書き出し先にCSVが存在する場合、上書きの確認を行わないと書き出すことが出来ません。</p>
 <section id="id15">
-<h4>既存の翻訳を残して上書き<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h4>
+<h3>上書き確認について<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<p>書き出し先にCSVが存在する場合、上書きの確認を行わないと書き出すことが出来ません。</p>
+<section id="id16">
+<h4>既存の翻訳を残して上書き<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h4>
 <p>翻訳された文章がある行は何も変更しません。
 また、翻訳CSVに無いテキストは新しい行で書き出されます。</p>
 <img alt="_images/write_dialog2.png" src="_images/write_dialog2.png" />
 </section>
 </section>
-<section id="id16">
-<h3>バックアップについて<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<section id="id17">
+<h3>バックアップについて<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
 <p>有効にした場合、以下のファイル・フォルダを&quot;(プロジェクト名)_langscore/backup&quot;に保存します。</p>
 <ul class="simple">
 <li><p>Script.rvdata ファイル</p></li>
@@ -355,12 +372,12 @@
         <li class="right" >
           <a href="003_usage.html" title="チュートリアル"
              >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">各画面の説明(翻訳ファイル作成モード)</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; 著作権 2025, BreezeSinfonia.
+    &#169; 著作権 2022-2026, BreezeSinfonia.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>

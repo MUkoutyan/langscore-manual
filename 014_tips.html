@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tips &#8212; Langscore 0.8.8 ドキュメント</title>
+    <title>Tips &#8212; Langscore 0.8.11 ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
-    <script src="_static/documentation_options.js?v=f2e7de95"></script>
+    <script src="_static/documentation_options.js?v=036f3d4d"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=4dbe4bdc"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="013_note.html" title="アプリとスクリプトにおける注意点"
              accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Tips</a></li> 
       </ul>
     </div>  
@@ -42,52 +42,128 @@
             
   <section id="tips">
 <span id="id1"></span><h1>Tips<a class="headerlink" href="#tips" title="Link to this heading">¶</a></h1>
+<section id="id2">
+<h2>ワークフロー<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>どの様に作業すればいい？<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>ここで紹介する内容はLangscoreが想定するワークフローです。</p>
+<p>プロジェクトによって運用は異なるため、参考程度にしてください。</p>
+<section id="id4">
+<h4>前提<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h4>
+<p>ゲーム中の文章は全て確定され、変更が加えられない状態であることを想定しています。</p>
+<p>文章を追記・更新しながらの翻訳作業も可能ですが、推奨しません。</p>
+<section id="id5">
+<h5>初回の翻訳作業<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h5>
+<ol class="arabic simple">
+<li><p>その時点のプロジェクトを使用してCSVを出力します。</p></li>
+<li><p>翻訳担当の方にCSVを渡します。</p></li>
+<li><p>翻訳完了後、CSVをdata/translateに配置します。</p></li>
+</ol>
+</section>
+<section id="id6">
+<h5>ゲームをバージョンアップして文章が追加・編集された場合<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h5>
+<ol class="arabic simple">
+<li><p>既に翻訳済みのCSVを持っている事を想定しています。</p></li>
+<li><p>Langscoreで <a class="reference internal" href="011_screen_description_edit.html#reanalysis"><span class="std std-ref">再解析</span></a> を行い、プロジェクトの内容を反映させます。</p></li>
+<li><p>Langscoreの <a class="reference internal" href="011_screen_description_edit.html#update-csv-second"><span class="std std-ref">翻訳CSVの更新 (2回目以降)</span></a> の「CSV出力先のパス」で、翻訳済みのCSVが置かれている場所を指定します。</p></li>
+<li><dl class="simple">
+<dt>「既存の翻訳を残して上書き」を指定して書き出します。</dt><dd><ul class="simple">
+<li><p>この時点で、翻訳済みCSVの中に新規文章や変更後の文章が含まれた状態となります。</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>上書きした翻訳CSVを翻訳担当の方に渡します。</p></li>
+<li><p>翻訳完了後、CSVをdata/translateに配置します。</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
 <section id="langscore">
 <h2>Langscoreアプリ利用編<a class="headerlink" href="#langscore" title="Link to this heading">¶</a></h2>
-<section id="id2">
-<h3>ウイルス対策ソフトに検出される<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<section id="id7">
+<h3>ウイルス対策ソフトに検出される<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
 <p>Langscore内部で使用しているrvcnv.exeが、トロイの木馬として誤検出されることがあります。</p>
 <p>該当ソフトはウイルスではないので、除外をお願いします。</p>
 </section>
-<section id="id3">
-<h3>パッキングモードの問題確認で、意図的に書いた箇所が警告にされる<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<section id="id8">
+<h3>パッキングモードの問題確認で、意図的に書いた箇所が警告にされる<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
 <p>警告・エラーはあくまで修正時のヒントになります。
 書き出したファイルに手が加えられる事はありませんので、そのままご利用ください。</p>
 </section>
 </section>
 <section id="csv">
 <h2>CSV作成編<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h2>
-<section id="id4">
-<h3>翻訳しない文章も含んでるけど問題有る？<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
-<p>正しく翻訳されない事を除けば、スクリプトの翻訳以外で問題になることはほぼありません。</p>
-<p>スクリプトの翻訳ファイルはオリジナルの文章に識別子を含んでいるため、ミスするとバグのような表示がされてしまいます。</p>
+<section id="id9">
+<h3>ゲーム内で文章を更新・追加・削除した<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>ゲーム側の文章を変更した場合、Langscoreでは再解析を行うことで変更内容を反映させます。</p>
+<p><a class="reference internal" href="011_screen_description_edit.html#reanalysis"><span class="std std-ref">再解析</span></a> を実行して下さい。</p>
+<p>再解析を行った後で翻訳CSVの書き出しを行って下さい。</p>
+</section>
+<section id="id10">
+<h3>CSVに書き出される文章が思ったより少ない<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>CSV内に全く同じ文章が複数ある場合、1つだけ書き出されます。</p>
+<p>例えば</p>
+<ul class="simple">
+<li><p>マップ内に全く同じ内容を話すNPCがいる</p></li>
+<li><p>アイテム内に同じ説明文のものがある</p></li>
+<li><p>メモの内容をコピペしている</p></li>
+</ul>
+<p>といったケースが該当します。</p>
+<p>そのため想定よりも書き出される文章量が少ないケースがあります。</p>
+<p>文章が違うのに書き出されていない場合は不具合ですので、ご報告頂けると助かります。</p>
+</section>
+<section id="id11">
+<h3>同一の文章をまとめないで欲しい<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>文法的性のある言語など、日本語では同一の文章でも話者の特性によって翻訳後の文章が2パターンに増えるケースがあります。</p>
+<p>現在のLangscoreの仕様は文章検索となるため、対応は非常に難しいです。</p>
+<p>お手数ですが、原文を変えるなどで対応をお願いします。</p>
+<hr class="docutils" />
+<p>例) 「私は嬉しいです。」という文章を別々の男女が話す場合</p>
+<p><strong>ゲーム中の文章</strong></p>
+<ul class="simple">
+<li><p>NPC1 -&gt; &quot;私は嬉しいです。(男)&quot;</p></li>
+<li><p>NPC2 -&gt; &quot;私は嬉しいです。(女)&quot;</p></li>
+</ul>
+<p><strong>翻訳CSVの記述</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>original,ja,fr
+私は嬉しいです。(男),私は嬉しいです。,Je suis heureux.
+私は嬉しいです。(女),私は嬉しいです。,Je suis heureuse.
+</pre></div>
+</div>
+<p>このように、日本語も翻訳文とみなすことで文法的性などにも対応することが出来ます。</p>
+</section>
+<section id="id12">
+<h3>翻訳しない文章も含んでるけど問題ある？<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>正しく翻訳されない事を除けば、スクリプトの翻訳時(特にVXAce)のみ問題があります。</p>
+<p>それ以外の場合は致命的な問題はありません。</p>
+<p>スクリプトの翻訳ファイルはオリジナルの文章に識別子を含んでいるため、翻訳できないとバグのような表示がされてしまいます。</p>
 <p>また翻訳システム処理の注意点として、未翻訳含めて翻訳の数が多いほど検索に時間がかかります。</p>
 <p>昨今のPCスペックでは問題になることはあまりないと思いますが、
 テストプレイ時に動作がカクつく場合は、不要な翻訳文の削除も検討してください。</p>
 </section>
 <section id="excel">
-<h3>Excelで読み込むと文字化けが起こる<a class="headerlink" href="#excel" title="Link to this heading">¶</a></h3>
-<p>修正予定の不具合です。</p>
-<p>LangscoreのCSVは文字コードをUTF-8で出力しており、Excelで読み込むにはBom付きUTF-8出ないと正しく読み込めません。</p>
-<p>お手数ですが、メモ帳等でBom付きUTF-8に変換してください。</p>
+<h3>Excel等で読み込むと文字化けが起こる<a class="headerlink" href="#excel" title="Link to this heading">¶</a></h3>
+<p>出力した翻訳CSVがUTF-8となっている可能性があります。メモ帳等でBom付きUTF-8に変換してください。</p>
 <p>なお、ゲームではUTF-8とBom付きUTF-8は気にせず使用できます。</p>
 </section>
-<section id="id5">
-<h3>スクリプトで何を無視したら良いのか分からない<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<section id="id13">
+<h3>スクリプトで何を無視したら良いのか分からない<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
 <p>除外可能なものには記号系の文字があります。
 また、文章の翻訳をメインに考えると、日本語以外の文は除外対象になる可能性が高いです。</p>
 <p><a class="reference internal" href="011_screen_description_edit.html#screen-auto-check-menu-edit"><span class="std std-ref">このページで紹介している機能</span></a>  の「自動チェックメニュー」を使用すると、記号のみ・日本語が含まれていない文章を一括で除外することが出来ます。</p>
 <p>以下に翻訳対象になりそうなケースとならなそうなケースをあげます。</p>
-<section id="id6">
-<h4>日本語以外の文で翻訳対象になりそうなケース<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
+<section id="id14">
+<h4>日本語以外の文で翻訳対象になりそうなケース<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>戦闘中の効果表示(HIT! COMBO!等)</p></li>
 <li><p>フォント名</p></li>
 <li><p>draw_messageの様な、描画に使われそうな変数に格納されている文章</p></li>
 </ul>
 </section>
-<section id="id7">
-<h4>ならなそうなケース<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<section id="id15">
+<h4>ならなそうなケース<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h4>
 <ul class="simple">
 <li><p>ファイルパス名やファイル名</p></li>
 <li><p>サウンド名</p></li>
@@ -113,29 +189,29 @@
 </section>
 </section>
 </section>
-<section id="id8">
-<h2>ゲーム内動作編<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
-<section id="id9">
-<h3>別の言語を選んだのに元の言語で表示される！<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<section id="id16">
+<h2>ゲーム内動作編<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<section id="id17">
+<h3>別の言語を選んだのに元の言語で表示される！<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
 <p>マップデータやイベントデータの場合、以下の可能性が考えられます。</p>
 <ul class="simple">
 <li><p>翻訳CSVが読み込まれていない</p></li>
 <li><p>翻訳CSVファイルの内容で、該当言語の箇所が空になっている</p></li>
 </ul>
-<p>スクリプトを使用している箇所の場合、以下の可能性が考えられます。</p>
+<p>VXAceでスクリプトが影響している箇所の場合、以下の可能性が考えられます。</p>
 <ul class="simple">
 <li><p>langscore_customに更新処理を書いていない</p></li>
 <li><p>.lstransが必要な箇所なのに、書かれていない</p></li>
 </ul>
 </section>
-<section id="id10">
-<h3>12345678:90:123 みたいなテキストが表示される！<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<section id="vxace">
+<h3>12345678:90:123 みたいなテキストが表示される！(特にVXAce)<a class="headerlink" href="#vxace" title="Link to this heading">¶</a></h3>
 <p>スクリプトを使用している箇所で、翻訳文が空の場合に発生します。</p>
 <p>翻訳文を割り当ててください。</p>
 <p>翻訳文が見つからなかった場合はオリジナルの文章を探し出すため、「スクリプトファイル名:行数:列数」の文章が表示されます。</p>
 </section>
-<section id="id11">
-<h3>そもそも文章が翻訳されない<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<section id="id18">
+<h3>そもそも文章が翻訳されない<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h3>
 <p>翻訳ファイルが読み込まれていない可能性があります。</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -145,7 +221,8 @@
 </dd>
 </dl>
 </li>
-<li><p>エディター内からのゲーム実行、またはコマンドプロンプトで&quot;Game.exe console&quot;を使用することで、内部ログを見ることが出来ます。</p></li>
+<li><p>VXAceではエディター内からのゲーム実行、またはコマンドプロンプトで&quot;Game.exe console&quot;を使用することで、内部ログを見ることが出来ます。</p></li>
+<li><p>MV/MZではゲーム実行中に F12 を押すことで、開発者ツールを表示することが出来ます。</p></li>
 </ul>
 </section>
 <section id="vx-ace">
@@ -223,12 +300,12 @@
         <li class="right" >
           <a href="013_note.html" title="アプリとスクリプトにおける注意点"
              >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Tips</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; 著作権 2025, BreezeSinfonia.
+    &#169; 著作権 2022-2026, BreezeSinfonia.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>

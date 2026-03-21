@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ワークフロー &#8212; Langscore 0.8.8 ドキュメント</title>
+    <title>ワークフロー &#8212; Langscore 0.8.11 ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=16da168b" />
-    <script src="_static/documentation_options.js?v=f2e7de95"></script>
+    <script src="_static/documentation_options.js?v=036f3d4d"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=4dbe4bdc"></script>
@@ -30,7 +30,7 @@
         <li class="right" >
           <a href="001_about.html" title="Langscoreについて"
              accesskey="P">前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ワークフロー</a></li> 
       </ul>
     </div>  
@@ -43,22 +43,32 @@
   <section id="workflow">
 <span id="id1"></span><h1>ワークフロー<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h1>
 <p>Langscoreを使用してゲームを翻訳するまでの流れは以下のようになります。</p>
+<section id="id2">
+<h2>初めて導入するときの作業<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <section id="csv">
-<h2>翻訳者に翻訳用CSVを渡すまで<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h2>
+<h3>翻訳者に翻訳用CSVを渡すまで<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/workflow.png"><img alt="ワークフロー図1" src="_images/workflow.png" style="width: 75%;" /></a>
 <p>ゲーム制作者の方はLangscoreを使用して、ゲームからテキストの抽出・翻訳CSVの作成を行います。
 翻訳者の方には作成したCSVを渡してください。</p>
 </section>
-<section id="id2">
-<h2>翻訳作業<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h3>翻訳作業<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
 <p>CSVファイルはExcelやGoogleスプレッドシートで編集することが出来ます。</p>
 <p>Office360やGoogleドライブに上げることで、共同作業等も可能です。</p>
 </section>
-<section id="id3">
-<h2>翻訳済みCSVをゲームに組み込むまで<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h3>翻訳済みCSVをゲームに組み込むまで<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
 <a class="reference internal image-reference" href="_images/workflow2.png"><img alt="ワークフロー図2" src="_images/workflow2.png" style="width: 75%;" /></a>
 <p>翻訳が完了したCSVは、ゲームプロジェクトの所定の場所に置くことでプラグインが読み込みます。</p>
 <p>翻訳作業の際に行うことで、ゲームをプレイして翻訳を確認することも可能です。</p>
+</section>
+</section>
+<section id="id5">
+<h2>ゲームをバージョンアップして文章が追加・編集された場合<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>Langscoreで <a class="reference internal" href="011_screen_description_edit.html#reanalysis"><span class="std std-ref">再解析</span></a> を行い、翻訳済みCSVを上書きします。</p>
+<p>Langscoreで翻訳CSVを上書きすると、既に翻訳済みの箇所は消されずに残したまま、新しい文章を追加することが出来ます。
+上書きしたCSVを、再度翻訳者の方に渡して下さい。</p>
+<a class="reference internal image-reference" href="_images/workflow3.png"><img alt="ワークフロー図3" src="_images/workflow3.png" style="width: 75%;" /></a>
 </section>
 </section>
 
@@ -127,12 +137,12 @@
         <li class="right" >
           <a href="001_about.html" title="Langscoreについて"
              >前へ</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.8 ドキュメント</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Langscore 0.8.11 ドキュメント</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ワークフロー</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; 著作権 2025, BreezeSinfonia.
+    &#169; 著作権 2022-2026, BreezeSinfonia.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
