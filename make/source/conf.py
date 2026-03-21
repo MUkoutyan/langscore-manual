@@ -9,7 +9,7 @@
 project = 'Langscore'
 copyright = '2025, BreezeSinfonia'
 author = 'BreezeSinfonia'
-release = '0.8.8'
+release = '0.8.10'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

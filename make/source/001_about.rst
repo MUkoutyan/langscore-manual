@@ -40,6 +40,12 @@ LangscoreはRPGツクール VXAce, RPGツクール MV/MZで翻訳機能を実装
   * 海賊版作成目的での利用は禁止します。
 
 
+ダウンロード
+~~~~~~~~~~~~~~~~~~~~
+
+`Langscore Releases (Github) <https://github.com/MUkoutyan/langscore-app/releases>`_
+
+
 必須コンポーネント
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -59,3 +65,4 @@ LangscoreはRPGツクール VXAce, RPGツクール MV/MZで翻訳機能を実装
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `紅唯まと（深爪貴族） <https://ci-en.dlsite.com/creator/1793>`_
+* `嘆きの七英雄 Project <https://www.nageki7.com/>`_
