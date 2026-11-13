@@ -1,4 +1,1 @@
-﻿make/build
-make/.doctrees
-make/.buildinfo
-make/.nojekyll
+_build/
