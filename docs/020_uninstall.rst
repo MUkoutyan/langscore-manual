@@ -16,7 +16,7 @@ RPGツクールVX Aceの場合
 * langscore
 * langscore_custom
 
-.. TODO: Langscore_RemoteHub（リアルタイム編集用プラグインを追加した場合）を追加
+* Langscore_RemoteHub（リアルタイム編集用プラグインを追加した場合）
 
 
 RPGツクールMV/MZの場合
@@ -28,10 +28,10 @@ RPGツクールMV/MZの場合
 * Langscore_ObserverBridge
 * LangscoreCustom
 
-.. TODO: Langscore_RemoteHub（リアルタイム編集用プラグインを追加した場合）を追加
+* Langscore_RemoteHub（リアルタイム編集用プラグインを追加した場合）
 
 
-RPGツクールVX Aceの場合
+lstrans関数の削除(VX Ace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .lstrans関数を使用している場合は削除してください。
@@ -62,7 +62,7 @@ OS上のファイル/フォルダ
 
 * プロジェクト/Font フォルダ
 
-RPG VX Aceの場合
+RPGツクールVX Aceの場合
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * .iniファイル内の[Langscore]グループ

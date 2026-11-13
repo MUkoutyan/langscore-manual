@@ -21,19 +21,19 @@ Langscoreマニュアル
    * - :ref:`Langscoreについて <about>`
      - とりあえず必ず読むページ
    * - :ref:`チュートリアル <tutorial>`
-     - どんな風に使うのかざっくり知りたい人向け
-   * - :ref:`各画面の説明(翻訳ファイル作成モード) <screen_description_edit>`
+     - 流れを知りたい人向け
+   * - :ref:`基本的な使い方 <screen_description_edit>`
      - UI中のボタンが何なのか知りたい人向け
-   * - :ref:`応用的な使い方(ツール) <usage_advance>`
+   * - :ref:`応用的な使い方 <usage_advance>`
      - Langscoreアプリの応用的な使い方
    * - :ref:`翻訳の編集 <translation_editor>`
      - Langscore上で翻訳文を編集したい人向け
    * - :ref:`機械翻訳 <machine_translation>`
-     - DeepLで翻訳したい人向け
+     - DeepL・Google翻訳で翻訳したい人向け
    * - :ref:`リアルタイム編集 <realtime_edit>`
      - テストプレイしながら翻訳したい人向け
-   * - :ref:`共有フォルダでの共同編集 <shared_editing>`
-     - 複数人で翻訳したい人向け
+   * - :ref:`複数人の共同編集 <shared_editing>`
+     - 共有フォルダやGitで、複数人で翻訳したい人向け
    * - :ref:`応用的な使い方(VX Ace向けのプログラム編) <usage_advance_script_vxace>`
      - VX Aceにおけるスクリプトの書き方
    * - :ref:`プラグイン制作者向けの項目(MV/MZ向け) <for_plugin_creator>`
@@ -61,7 +61,6 @@ Langscoreマニュアル
   :caption: 目次
    
   ./001_about.rst
-  ./002_workflow.rst
   ./003_usage.rst
   ./011_screen_description_edit.rst
   ./012_1_usage_advance.rst

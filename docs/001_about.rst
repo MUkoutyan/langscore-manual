@@ -23,7 +23,7 @@ LangscoreはRPGツクール VXAce, RPGツクール MV/MZで翻訳機能を実装
 * ゲームを実行しながらリアルタイムで翻訳を適用することが出来ます。
 
 利用規約
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 * 無料でご利用いただけます。
 * 商用・非商用問わずご利用いただけます。
@@ -36,38 +36,39 @@ LangscoreはRPGツクール VXAce, RPGツクール MV/MZで翻訳機能を実装
   - 例)翻訳ソフト Langscore : 來奈津(BreezeSinfonia)
 
   
-.. warning:: * Langscoreを構成するファイルの再配布は禁止します。
+.. warning::
 
-  - ツクール用スクリプトのlangscoreもご遠慮ください。
+   * Langscoreを構成するファイルの再配布は禁止します。
 
-  * 海賊版作成目的での利用は禁止します。
+     - ツクール用スクリプトのlangscoreもご遠慮ください。
 
-  * ゲーム制作以外の用途で使用することを禁止します。
+   * 海賊版作成目的での利用は禁止します。
+   * ゲーム制作以外の用途で使用することを禁止します。
 
 
 ダウンロード
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 `Langscore Releases (Github) <https://github.com/MUkoutyan/langscore-app/releases>`_
 
 
 必須コンポーネント
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 * Microsoft Visual C++ 2022 再頒布可能パッケージ
 
- - 未インストールの場合はexeと同じフォルダに有るvc_redist.x64.exeをご利用ください。
+  - 未インストールの場合はexeと同じフォルダに有るvc_redist.x64.exeをご利用ください。
 
 
 作った人
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 * `來奈津（BreezeSinfonia） <https://breezesinfonia.com/>`_
 
   - `Langscore Github <https://github.com/MUkoutyan/langscore-app>`_
 
 スペシャルサンクス(敬称略)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 * `紅唯まと（深爪貴族） <https://ci-en.dlsite.com/creator/1793>`_
 * `嘆きの七英雄 Project <https://www.nageki7.com/>`_

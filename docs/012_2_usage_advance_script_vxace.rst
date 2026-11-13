@@ -29,13 +29,11 @@ A.文章を格納している変数の書き換え
 
 バトル中に表示される"攻撃"をBATTLE_ATTACK_TEXT変数に代入している処理です。
 
-"攻撃"を"Hit"にしたい場合、BATTLE_ATTACK_TEXTを書き換える処理が必要ですが、
+"攻撃"を"Hit"にしたい場合、BATTLE_ATTACK_TEXTを書き換える処理が必要ですが、Langscoreではその処理をlangscore_customに記述します。
 
-Langscoreではその処理をlangscore_customに記述します。
+1. langscore_customの冒頭に ``Langscore.translate_(識別ID)  #(スクリプト名)`` という行があるので、そこから翻訳したいスクリプトを探してください。
 
-* まず、langscore_customの冒頭に ```Langscore.translate_(識別ID)	#(スクリプト名)``` という行があるので、そこから翻訳したいスクリプトを探してください。
-
-* 次に、該当のスクリプトから関数 ```def Langscore.translate_(識別ID)``` と記述されている箇所を探します。
+2. 該当のスクリプトから関数 ``def Langscore.translate_(識別ID)`` と記述されている箇所を探します。
 
 翻訳対象に"攻撃"が正しく含まれている場合、関数内に以下の様な記述がされています。
 
@@ -45,15 +43,13 @@ Langscoreではその処理をlangscore_customに記述します。
 	#original : 攻撃
 	#Langscore.translate_for_script("01234567:37:38")
 
-1行目から、
+各行の意味は次のとおりです。
 
 1. スクリプト識別子と行,列の情報
 2. スクリプトに書かれている原文
 3. 翻訳文を返す関数
 
-になります。
-
-* ここに処理を記述します。例が以下の通りです。
+ここに処理を記述します。例は以下の通りです。
 
 .. code-block:: ruby
 

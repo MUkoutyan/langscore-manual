@@ -12,7 +12,8 @@ Langscoreでは下記の処理または、関数の処理を上書きしてい�
 
 他のスクリプトが同様の事を行っていた場合、Langscoreの処理と競合する可能性があります。
 
-.. TODO: Langscore_RemoteHub が上書きする関数があれば、VX Ace・MV/MZ の一覧に追加
+リアルタイム編集用のプラグイン Langscore_RemoteHub を追加した場合は、「Langscore_RemoteHub」の項目の処理も上書きされます。
+Langscore_RemoteHubはテストプレイ中にだけ動作するため、通常のプレイでは上書きしません。
 
 VX Ace
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,11 +45,30 @@ MV/MZ
 * ImageManager.loadBitmap
 * フォントの変更
 
+Langscore_RemoteHub
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**VX Ace**
+
+* Langscore.translate
+* Window_Base.convert_escape_characters
+* Window_ChoiceList.select
+* Window_Message.process_all_text
+* Scene_Base.update
+
+**MV/MZ**
+
+* Langscore.translate
+* Window_Base.convertEscapeCharacters
+* Window_ChoiceList.select
+* Window_Message.startMessage
+* Scene_Base.update
+
 
 
 
 各ソフトのMD5値
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 
 Powershellやハッシュ値比較ソフトでMD5の比較を行う際に利用してください。
 
